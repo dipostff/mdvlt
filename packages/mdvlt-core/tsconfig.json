@@ -1,0 +1,8 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    // Web APIs without the DOM: the core has no UI and may later run inside a Web Worker.
+    "lib": ["ES2024", "WebWorker"]
+  },
+  "include": ["src"]
+}

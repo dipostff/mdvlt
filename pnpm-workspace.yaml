@@ -1,0 +1,8 @@
+packages:
+  - apps/*
+  - packages/*
+
+catalog:
+  typescript: ~6.0.3
+  vite: ^8.0.0
+  vitest: ^5.0.1
