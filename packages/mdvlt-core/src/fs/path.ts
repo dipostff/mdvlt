@@ -43,3 +43,8 @@ export function parentPath(path: VaultPath): VaultPath {
   const slash = path.lastIndexOf('/');
   return slash === -1 ? '' : path.slice(0, slash);
 }
+
+/** Last segment of a canonical path: `Projects/Idea.md` → `Idea.md`. */
+export function baseName(path: VaultPath): string {
+  return path.slice(path.lastIndexOf('/') + 1);
+}

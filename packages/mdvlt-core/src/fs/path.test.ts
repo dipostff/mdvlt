@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { joinVaultPath, normalizeVaultPath, parentPath } from './path';
+import { baseName, joinVaultPath, normalizeVaultPath, parentPath } from './path';
 
 describe('normalizeVaultPath', () => {
   it.each([
@@ -41,5 +41,15 @@ describe('parentPath', () => {
     ['', ''],
   ])('%j → %j', (input, expected) => {
     expect(parentPath(input)).toBe(expected);
+  });
+});
+
+describe('baseName', () => {
+  it.each([
+    ['Notes/Drafts/Idea.md', 'Idea.md'],
+    ['Idea.md', 'Idea.md'],
+    ['', ''],
+  ])('%j → %j', (input, expected) => {
+    expect(baseName(input)).toBe(expected);
   });
 });
